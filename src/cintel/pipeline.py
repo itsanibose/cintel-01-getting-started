@@ -8,7 +8,7 @@ Purpose:
   Run this script to see a log message in the terminal.
 
 Run as a Module:
-  uv run python -m cintel.pipeline
+  uv run python -m cintel.pipeline - Expected output: Pipeline executed successfully!
 
 DESIGN:
 
