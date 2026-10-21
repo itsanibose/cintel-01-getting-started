@@ -41,6 +41,8 @@ SKILLS:
 # First from the Python standard library (no installation needed)
 import logging
 from pathlib import Path
+import tomllib
+from pprint import pprint
 
 # Then, external dependencies (must be listed in pyproject.toml)
 from datafun_toolkit.logger import get_logger, log_header, log_path
@@ -59,6 +61,21 @@ ROOT_DIR: Path = Path.cwd()
 DOCS_DIR: Path = ROOT_DIR / "docs"
 SOURCE_DIR: Path = ROOT_DIR / "src"
 CINTEL_DIR: Path = SOURCE_DIR / "cintel"
+
+
+# ==== READING TOML FILES =====
+
+def load_toml_file(toml_path: Path) -> dict:
+    """Load a TOML file and return its contents as a dictionary.
+
+    Args:
+        toml_path (Path): The path to the TOML file."""
+
+    with open(toml_path, "rb") as f:
+        return tomllib.load(f)
+
+#data:dict = load_toml_file(ROOT_DIR / "pyproject.toml")
+#pprint(data)  # Print the contents of the TOML file to the console for inspection
 
 # === DEFINE THE MAIN FUNCTION ===
 
